@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.mysql.mycar.MyCarDao"> <!-- namespace는 dao이다. -->
+	<select id="getAllListOfMyCar" resultType="mdto"> <!-- resultType은 반환타입을 쓰는것이다 -->
+		select * from mycar order by num desc
+	</select>
+	<!-- 전체수 얻기 -->
+	<select id="getTotalCountOfMyCar" resultType="int">
+		select count(*) from mycar
+	</select>
+	<!-- insert -->
+	<select id="insertOfMyCar" parameterType="mdto">
+		insert into mycar (carname,carprice,carcolor,carguip) values(#{carname},#{carprice},#{carcolor},#{carguip})
+	</select>
+	<!-- delete -->
+	<select id="deleteOfMyCar" parameterType="mdto">
+		delete from mycar where num=#{num}
+	</select>
+</mapper>

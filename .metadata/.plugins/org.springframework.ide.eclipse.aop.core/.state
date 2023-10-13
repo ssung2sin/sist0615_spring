@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringMysql6"/>
+<aop-project name="SpringMvcQuiz"/>
+<aop-project name="SpringEx1"/>
+<aop-project name="SpringMvc2"/>
+<aop-project name="SpringMvc3"/>
+<aop-project name="SpringMvc4"/>
+<aop-project name="SpringMvcJson7"/>
+<aop-project name="SpringMvcFileUpload8"/>
+<aop-project name="SpringMvcMunje"/>
+<aop-project name="SpringMvcRead5"/>
+</aop-reference-model>

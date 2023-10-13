@@ -1,0 +1,28 @@
+package spring.mvc.quiz;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import spring.data.dto.InfoDto;
+
+@Controller
+public class InfoController {
+	
+	@GetMapping("/form")
+	public String from() {
+		
+		return "infoForm";
+	}
+	
+	@PostMapping("/infoWrite")
+	public ModelAndView write(@RequestParam InfoDto dto) {
+		ModelAndView model=new ModelAndView();
+		
+		model.setViewName("infoWrite");
+		
+		return model;
+	}
+}

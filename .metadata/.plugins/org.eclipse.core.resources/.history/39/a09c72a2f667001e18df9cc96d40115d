@@ -1,0 +1,5 @@
+package spring.mysql.mycar;
+
+public class CarController {
+
+}

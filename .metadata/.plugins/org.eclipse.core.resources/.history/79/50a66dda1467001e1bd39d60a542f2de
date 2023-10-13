@@ -1,0 +1,24 @@
+package spring.mvc.samsung;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/shop")
+public class ShopController {
+	
+	@GetMapping("/list")
+	public String result3() {
+		
+		
+		return "shop/list";
+	}
+	
+	@GetMapping("/form2")
+	public String form2() {
+		
+		return "shop/shopForm";
+	}
+}

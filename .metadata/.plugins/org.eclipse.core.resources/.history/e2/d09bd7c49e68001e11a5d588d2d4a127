@@ -1,0 +1,11 @@
+package spring.mysql.carmember;
+
+import com.google.protobuf.Timestamp;
+
+public class CarMemberDto {
+	private int num;
+	private String name;
+	private String hp;
+	private String addr;
+	private Timestamp gaipday;
+}

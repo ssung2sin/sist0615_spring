@@ -1,0 +1,13 @@
+package spring.mvc.json;
+
+public class PhotoDto {
+	private String name;
+	private String photo;
+	
+	public PhotoDto(String name,String photo) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.name=name;
+		this.photo=photo;
+	}
+}

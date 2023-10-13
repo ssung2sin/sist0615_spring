@@ -1,0 +1,19 @@
+package spring.mvc.friday;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class InfoDao implements InfoInter {
+	
+	@Autowired
+	SqlSession session;
+	
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return session.selectOne("selectTotalCountOfmyInfo");
+	}
+
+}

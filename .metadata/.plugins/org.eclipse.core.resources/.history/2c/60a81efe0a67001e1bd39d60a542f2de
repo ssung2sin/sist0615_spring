@@ -1,0 +1,32 @@
+package spring.mvc.samsung;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class BoardController {
+	
+	@GetMapping("/board/form1")
+	public String form1() {
+		return "board/writeForm";
+	}
+	
+	@PostMapping("/board/process")
+	public ModelAndView process1(@RequestParam String name,
+			@RequestParam String date, @RequestParam String gender,
+			@RequestParam String msg(defaultValue = "행복한 하루 보내세요!")) {
+		ModelAndView model=new ModelAndView();
+		
+		model.addObject("name",name);
+		model.addObject("date", date);
+		model.addObject("gender", gender);
+		model.addObject("msg",msg);
+		
+		model.setViewName("board/result");
+		
+		return model;
+	}
+}

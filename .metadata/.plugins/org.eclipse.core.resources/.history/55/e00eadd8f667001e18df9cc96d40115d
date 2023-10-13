@@ -1,0 +1,19 @@
+package spring.mysql.mycar;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class CarController {
+	
+	@Autowired // 이 안에있는 dao 메서드 호출하기위해
+	MycarDao dao;
+	
+	@GetMapping("/kakao/list")
+	public String list(Model model) {
+		
+		return "car/carList";
+	}
+}

@@ -1,0 +1,25 @@
+package spring.mysql.carmember;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CarMemberDao implements CarMemberInter {
+
+	@Autowired
+	private SqlSession session;
+	
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return session.selectOne("getTotalCountOfCarMember");
+	}
+
+	@Override
+	public void insert(CarMemberDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

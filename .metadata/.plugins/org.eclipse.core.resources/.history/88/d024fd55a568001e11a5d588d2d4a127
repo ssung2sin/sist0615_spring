@@ -1,0 +1,11 @@
+package spring.mysql.carmember;
+
+import java.util.List;
+
+public interface CarMemberInter {
+	public int getTotalCount();
+
+	public void insert(CarMemberDto dto);
+	
+	public List<CarMemberDto> allSelect();
+}

@@ -1,0 +1,18 @@
+package spring.mvc.json;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class JsonTestController {
+
+	public Map<String, String> list1(){
+		Map<String, String>map=new HashMap<String, String>();
+		
+		return map;
+	}
+	
+	
+}

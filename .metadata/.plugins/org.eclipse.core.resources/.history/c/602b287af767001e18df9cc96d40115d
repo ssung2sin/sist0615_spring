@@ -1,0 +1,17 @@
+package spring.mysql.mycar;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class MycarDao {
+
+	@Autowired
+	private SqlSession session; //private «ÿ¡‡µµ æ»«ÿ¡‡µµµ»¥Ÿ.
+	
+	public int getTotalCount() {
+		
+		return session.selectOne("mycar.getTotalCountOfMyCar");
+	}
+}

@@ -1,0 +1,12 @@
+package spring.mysql.carmember;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class CarMemberController {
+
+	public String memberList() {
+		
+		return "../carmember/memberList";
+	}
+}

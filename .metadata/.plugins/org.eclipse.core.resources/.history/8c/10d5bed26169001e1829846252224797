@@ -1,0 +1,5 @@
+package spring.mvc.json;
+
+public class PhotoDto {
+
+}

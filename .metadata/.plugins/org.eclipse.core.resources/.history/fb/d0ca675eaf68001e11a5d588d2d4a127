@@ -1,0 +1,53 @@
+package spring.mysql.carmember;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class CarMemberController {
+
+	@Autowired
+	CarMemberInter inter;
+	
+	@Autowired
+	CarMemberDao dao;
+	
+	@GetMapping("/member/list")
+	public String memberList(Model model) {
+		
+		//°¹¼ö°¡Á®¿À±â
+		int count=inter.getTotalCount();
+		List<CarMemberDto>list=dao.allSelect();
+		
+		/*
+		 * for(int i=0;i<list.size();i++) { CarMemberDto dto=list.get(i);
+		 * 
+		 * System.out.println(dto.getGaipday()); }
+		 */
+		
+		model.addAttribute("count", count);
+		model.addAttribute("list", list);
+		
+		return "carmember/memberList";
+	}
+	
+	@GetMapping("/member/addform")
+	public String addForm() {
+		
+		return "carmember/addForm";
+	}
+	
+	@PostMapping("member/add")
+	public String insert(@ModelAttribute("dto")CarMemberDto dto) {
+		
+		inter.insert(dto); //daoµµ interµµ ´Ù µÊ
+		return "redirect:list";
+	}
+	
+}

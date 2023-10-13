@@ -1,0 +1,8 @@
+package spring.mvc.friday;
+
+public interface InfoInter {
+
+	public int getTotalCount();
+	
+	public void insertMyInfo(InfoDto dto);
+}

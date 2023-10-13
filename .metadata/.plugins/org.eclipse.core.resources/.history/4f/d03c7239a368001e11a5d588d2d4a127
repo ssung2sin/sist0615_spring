@@ -1,0 +1,6 @@
+package spring.mysql.carmember;
+
+public interface CarMemberInter {
+	public int getTotalCount();
+	
+}

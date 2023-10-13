@@ -1,0 +1,36 @@
+
+10월 05, 2023 11:14:53.924 NEW SESSION
+10월 05, 2023 11:14:53.925 [16348:16356:1005/111453.900:ERROR:device_event_log_impl.cc(225)] [11:14:53.900] USB: usb_service_win.cc:415 Could not read device interface GUIDs: 지정된 파일을 찾을 수 없습니다. (0x2)
+10월 05, 2023 11:14:54.212 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+10월 05, 2023 11:14:59.81 [16348:16356:1005/111459.080:ERROR:data_type_manager_impl.cc(36)] Passwords cryptographer error was encountered: 
+10월 05, 2023 11:16:29.490 [3264:3612:1005/111629.489:ERROR:data_type_manager_impl.cc(36)] Passwords cryptographer error was encountered: 
+10월 05, 2023 11:17:24.977 [3264:3612:1005/111724.977:ERROR:device_event_log_impl.cc(225)] [11:17:24.976] USB: usb_service_win.cc:415 Could not read device interface GUIDs: 지정된 파일을 찾을 수 없습니다. (0x2)
+10월 05, 2023 11:17:25.345 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+10월 05, 2023 13:00:06.216 [13088:6584:1005/130006.215:ERROR:device_event_log_impl.cc(225)] [13:00:06.215] USB: usb_service_win.cc:415 Could not read device interface GUIDs: 지정된 파일을 찾을 수 없습니다. (0x2)
+10월 05, 2023 13:00:06.510 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+10월 05, 2023 13:00:13.347 [13088:6584:1005/130013.346:ERROR:data_type_manager_impl.cc(36)] Passwords cryptographer error was encountered: 
+10월 05, 2023 13:18:32.866 [13088:14784:1005/131832.865:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+10월 05, 2023 13:36:00.908 [13088:14784:1005/133600.908:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+10월 05, 2023 14:17:09.384 [13088:6584:1005/141709.382:ERROR:device_event_log_impl.cc(225)] [14:17:09.383] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 05, 2023 14:27:07.352 [13088:6584:1005/142707.351:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+10월 05, 2023 14:27:48.509 [13088:6584:1005/142748.509:ERROR:device_event_log_impl.cc(225)] [14:27:48.509] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 05, 2023 17:23:40.125 [13088:6584:1005/172340.124:ERROR:device_event_log_impl.cc(225)] [17:23:40.124] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 05, 2023 17:24:01.376 [13088:6584:1005/172401.375:ERROR:device_event_log_impl.cc(225)] [17:24:01.374] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 05, 2023 17:58:10.102 [13088:6584:1005/175810.101:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+10월 05, 2023 18:15:54.532 [13088:14784:1005/181554.531:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+10월 05, 2023 18:40:54.99 [13088:14784:1005/184054.098:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+10월 06, 2023 09:04:41.871 [13088:14784:1006/090441.870:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+10월 06, 2023 09:04:42.489 [13088:14824:1006/090442.488:ERROR:get_updates_processor.cc(261)] PostClientToServerMessage() failed during GetUpdates with error 2
+10월 06, 2023 09:05:10.14 [13088:6584:1006/090510.013:ERROR:device_event_log_impl.cc(225)] [09:05:10.013] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 06, 2023 09:05:10.72 [13088:6584:1006/090510.071:ERROR:device_event_log_impl.cc(225)] [09:05:10.068] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 06, 2023 09:05:10.214 [13088:6584:1006/090510.214:ERROR:device_event_log_impl.cc(225)] [09:05:10.214] USB: usb_service_win.cc:307 SetupDiEnumDeviceInterfaces: 사용 가능한 데이터가 없습니다. (0x103)
+10월 06, 2023 10:18:44.905 [13088:6584:1006/101844.904:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+10월 06, 2023 10:35:38.268 [13088:14784:1006/103538.267:ERROR:mcs_client.cc(750)] Received close command, resetting connection.
+10월 06, 2023 12:09:11.167 [13088:6584:1006/120911.166:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+10월 06, 2023 12:44:19.940 [13088:14784:1006/124419.939:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+10월 06, 2023 12:47:03.04 [13088:14784:1006/124703.003:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+
+10월 13, 2023 09:51:00.903 NEW SESSION
+10월 13, 2023 09:51:00.904 [17944:4240:1013/095100.889:ERROR:device_event_log_impl.cc(225)] [09:51:00.889] USB: usb_service_win.cc:415 Could not read device interface GUIDs: 지정된 파일을 찾을 수 없습니다. (0x2)
+10월 13, 2023 09:51:05.935 [17944:4240:1013/095105.934:ERROR:data_type_manager_impl.cc(36)] Passwords cryptographer error was encountered: 
+10월 13, 2023 11:06:58.828 [17944:4240:1013/110658.827:ERROR:device_event_log_impl.cc(225)] [11:06:58.826] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)

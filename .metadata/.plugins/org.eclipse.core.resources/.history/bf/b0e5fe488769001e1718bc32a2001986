@@ -1,0 +1,6 @@
+package spring.mvc.friday;
+
+public interface InfoInter {
+
+	public int getTotalCount();
+}

@@ -1,0 +1,5 @@
+package spring.mysql.carmember;
+
+public interface CarMemberInter {
+
+}
