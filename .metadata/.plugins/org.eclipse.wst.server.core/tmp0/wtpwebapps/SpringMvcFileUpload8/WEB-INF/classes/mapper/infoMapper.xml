@@ -7,9 +7,9 @@
 		select count(*) from myinfo
 	</select>
 	
-	<select id="selectAllOfMyInfo" resultType="idto">
+<!-- 	<select id="selectAllOfMyInfo" resultType="idto">
 		select * from myinfo order by num desc
-	</select>
+	</select> -->
 	
 	<insert id="insertOfmyInfo" parameterType="idto">
 		insert into myinfo (name,driver,addr,photo,gaipday) values(#{name},#{driver},#{addr},#{photo},now())
@@ -30,4 +30,12 @@
 	<delete id="deleteOfMyInfo" parameterType="String">
 		delete from myinfo where num=#{num}
 	</delete>
+	
+	<select id="selectAllOfMyInfo" resultType="idto" parameterType="Map">
+		select * from myinfo
+		<if test="search!=null"> <!-- 여기서 달러는 column을 의미한다 -->
+		where ${title} like concat('%',#{search},'%')
+		</if>
+		order by num desc
+	</select>
 </mapper>

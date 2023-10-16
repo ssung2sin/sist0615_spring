@@ -1,0 +1,26 @@
+package board.data.controller;
+
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class BoardWriteController {
+	
+	@GetMapping("board/writeform")
+	public String insertForm(@RequestParam Map<String, String> map) {
+		
+		//요 5개는 답글일 경우에만 넘어온다(새 글일 경우 넘어오지 않는다)
+		String currentPage=map.get("currentPage");
+		String num=map.get("num");
+		String regroup=map.get("regroup");
+		String restep=map.get("restep");
+		String relevel=map.get("relevel");
+		
+		System.out.println(currentPage+","+num+",");
+		
+		return "reboard/content";
+	}
+}

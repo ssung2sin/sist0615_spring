@@ -1,0 +1,6 @@
+package spring.mvc.reboard;
+
+public interface BoardDaoInter {
+	
+	public int getTotalCount();
+}

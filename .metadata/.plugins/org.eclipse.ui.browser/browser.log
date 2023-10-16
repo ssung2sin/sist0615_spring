@@ -34,3 +34,11 @@
 10월 13, 2023 09:51:00.904 [17944:4240:1013/095100.889:ERROR:device_event_log_impl.cc(225)] [09:51:00.889] USB: usb_service_win.cc:415 Could not read device interface GUIDs: 지정된 파일을 찾을 수 없습니다. (0x2)
 10월 13, 2023 09:51:05.935 [17944:4240:1013/095105.934:ERROR:data_type_manager_impl.cc(36)] Passwords cryptographer error was encountered: 
 10월 13, 2023 11:06:58.828 [17944:4240:1013/110658.827:ERROR:device_event_log_impl.cc(225)] [11:06:58.826] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+
+10월 16, 2023 10:07:39.299 NEW SESSION
+10월 16, 2023 10:07:39.299 [7576:6780:1016/100739.296:ERROR:device_event_log_impl.cc(225)] [10:07:39.295] USB: usb_service_win.cc:415 Could not read device interface GUIDs: 지정된 파일을 찾을 수 없습니다. (0x2)
+10월 16, 2023 10:07:46.400 [7576:6780:1016/100746.400:ERROR:data_type_manager_impl.cc(36)] Passwords cryptographer error was encountered: 
+10월 16, 2023 10:14:56.382 [7576:6780:1016/101456.381:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+10월 16, 2023 13:03:28.650 [7576:4524:1016/130328.649:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+10월 16, 2023 13:44:17.115 [7576:17248:1016/134417.115:ERROR:get_updates_processor.cc(261)] PostClientToServerMessage() failed during GetUpdates with error 2
+10월 16, 2023 13:44:17.260 [7576:4524:1016/134417.259:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106

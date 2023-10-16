@@ -1,0 +1,9 @@
+package spring.mvc.reboard;
+
+public interface BoardDaoInter {
+	
+	public int getTotalCount();
+	public int getMaxNum();
+	public void updateRestep(int regroup,int restep);
+	public void insertReboard(BoardDto dto);
+}

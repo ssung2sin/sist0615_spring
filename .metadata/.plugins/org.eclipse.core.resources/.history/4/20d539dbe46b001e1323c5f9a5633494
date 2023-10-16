@@ -1,0 +1,37 @@
+package spring.mvc.reboard;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BoardDao implements BoardDaoInter{
+
+	@Autowired
+	private SqlSession session;
+	
+	@Override
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		return session.selectOne("getTotalCountOfReboard");
+	}
+
+	@Override
+	public int getMaxNum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void updateRestep(int regroup, int restep) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertReboard(BoardDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
