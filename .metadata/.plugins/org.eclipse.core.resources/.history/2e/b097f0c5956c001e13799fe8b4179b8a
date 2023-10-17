@@ -1,0 +1,23 @@
+package board.data.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class BoardDeleteController {
+	
+	@GetMapping("/board/updateform")
+	public ModelAndView deleteform(@RequestParam int num,
+			@RequestParam int currentPage) {
+		ModelAndView mview=new ModelAndView();
+		
+		mview.addObject("num", num);
+		mview.addObject("currentPage", currentPage);
+		
+		mview.setViewName("reboard/delete");
+		
+		return mview;
+	}
+}	

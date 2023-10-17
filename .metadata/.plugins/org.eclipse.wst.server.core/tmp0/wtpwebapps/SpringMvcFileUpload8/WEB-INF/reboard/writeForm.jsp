@@ -22,8 +22,8 @@
 			<input type="hidden" name="relevel" value="${relevel }">
 			<table class="table table-bordered" style="width: 500px;">
 				<caption align="top"><b>
-				<c:if test="${num==0 }">새글쓰기</c:if>
-				<c:if test="${num!=0 }">답글쓰기</c:if>
+				<c:if test="${dto.num==0 }">새글쓰기</c:if>
+				<c:if test="${dto.num!=0 }">답글쓰기</c:if>
 				</b></caption>
 				<tr>
 					<th>작성자</th>
@@ -49,7 +49,7 @@
 				<tr>
 					<th>사진</th>
 					<td>
-						<input type="file" name="uimage" class="form-control"
+						<input type="file" name="uimage" class="form-control" multiple="multiple"
 						style="width: 220px;">
 					</td>
 				</tr>

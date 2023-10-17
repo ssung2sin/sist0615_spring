@@ -24,4 +24,32 @@
 	<select id="selectPagingOfReboard" resultType="bdto" parameterType="HashMap">
 		select * from reboard order by regroup desc,restep asc limit #{start},#{perPage}
 	</select>
+	<!-- 하나의 dto 값 얻기 -->
+	<select id="getDateOfReboard" resultType="bdto" parameterType="int">
+		select * from reboard where num=#{num}
+	</select>
+	
+	<!-- readcount 증가 -->
+	<update id="readcountPlusOfReboard" parameterType="int">
+		update reboard set readcount=readcount+1 where num=#{num}
+	</update>
+	
+	<!-- passcheck -->
+	<select id="checkPassOfReboard" parameterType="HashMap" resultType="int">
+		select count(*) from reboard where num=#{num} and pass=#{pass}
+	</select>
+	
+	<!-- update -->
+	<update id="updateOfReboard" parameterType="bdto">
+		update reboard set writer=#{writer},subject=#{subject}
+		<if test="photo!='no'">
+		,photo=#{photo}
+		</if>
+		 where num=#{num}
+	</update>
+	
+	<!-- delete -->
+	<delete id="deleteOfReboard" parameterType="String">
+		delete from reboard where num=#{num}
+	</delete>
 </mapper>

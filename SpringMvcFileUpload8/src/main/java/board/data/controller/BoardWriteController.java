@@ -37,7 +37,7 @@ public class BoardWriteController {
 		String restep=map.get("restep");
 		String relevel=map.get("relevel");
 		
-		System.out.println(currentPage+","+num+",");
+		System.out.println(currentPage+","+num+","+regroup+","+restep+","+relevel);
 		
 		//입력폼에 hidden으로 넣어줘야함.. 답글일때 대비
 		model.addAttribute("currentPage", currentPage==null?"1":currentPage);
@@ -55,14 +55,14 @@ public class BoardWriteController {
 	@PostMapping("/board/insert")
 	public String insert(@ModelAttribute BoardDto dto,
 			@RequestParam ArrayList<MultipartFile> uimage,
-			HttpSession session) {
+			HttpSession session, @RequestParam int currentPage) {
 		
 		//실제경로
 		String path=session.getServletContext().getRealPath("/WEB-INF/photo");
 		System.out.println(path);
 		
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
-		
+		int maxNum=dao.getMaxNum();
 		String photo="";
 		
 		if(uimage.get(0).getOriginalFilename().equals("")) {
@@ -88,11 +88,12 @@ public class BoardWriteController {
 			photo=photo.substring(0,photo.length()-1);
 		}
 		
+		
 		//dto의 photo에 넣기
 		dto.setPhoto(photo);
 		
 		dao.insertReboard(dto);
 		
-		return "redirect:list"; //content없으니까 일단 목록으로
+		return "redirect:content?num="+maxNum+"&currentPage="+currentPage; //content없으니까 일단 목록으로
 	}
 }

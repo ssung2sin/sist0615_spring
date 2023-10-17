@@ -1,0 +1,50 @@
+package board.data.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import spring.mvc.reboard.BoardDao;
+import spring.mvc.reboard.BoardDto;
+
+@Controller
+public class BoardUpdateController {
+	
+	@Autowired
+	BoardDao dao;
+	
+	@GetMapping("/board/updatepassform")
+	public ModelAndView updatepass(@RequestParam int num,
+			@RequestParam int currentPage) {
+		ModelAndView mview=new ModelAndView();
+		
+		mview.addObject("num", num);
+		mview.addObject("currentPage", currentPage);
+		
+		mview.setViewName("reboard/updatePassForm");
+		
+		return mview;
+	}
+	
+	@PostMapping("/board/updatepass")
+	public String updateform(Model model,
+			@RequestParam String num,
+			@RequestParam String pass) {
+		
+		//비번이 맞으면 수정폼으로, 틀린경우는 passFail로
+		int flag=dao.getCheckPass(num, pass);
+		
+		if(flag==1) {
+			int intNum=Integer.parseInt(num);
+			BoardDto dto=dao.getData(intNum);
+			model.addAttribute("dto", dto);
+			return "reboard/updateForm";
+		}else {
+			return "reboard/passFail";
+		}
+	}
+}

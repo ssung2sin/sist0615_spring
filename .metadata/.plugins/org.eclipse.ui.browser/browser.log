@@ -42,3 +42,11 @@
 10월 16, 2023 13:03:28.650 [7576:4524:1016/130328.649:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
 10월 16, 2023 13:44:17.115 [7576:17248:1016/134417.115:ERROR:get_updates_processor.cc(261)] PostClientToServerMessage() failed during GetUpdates with error 2
 10월 16, 2023 13:44:17.260 [7576:4524:1016/134417.259:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+10월 16, 2023 17:13:32.729 [7576:6780:1016/171332.729:ERROR:device_event_log_impl.cc(225)] [17:13:32.729] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 16, 2023 17:17:00.832 [7576:4524:1016/171700.831:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+10월 17, 2023 09:06:53.583 [7576:4524:1017/090653.582:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+10월 17, 2023 09:06:53.595 [7576:17248:1017/090653.594:ERROR:get_updates_processor.cc(261)] PostClientToServerMessage() failed during GetUpdates with error 2
+10월 17, 2023 09:06:53.595 [7576:4524:1017/090653.594:ERROR:checkin_request.cc(243)] Check-in request got net error: -106
+10월 17, 2023 09:07:18.203 [7576:6780:1017/090718.202:ERROR:device_event_log_impl.cc(225)] [09:07:18.202] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+10월 17, 2023 09:07:18.240 [7576:6780:1017/090718.240:ERROR:device_event_log_impl.cc(225)] [09:07:18.239] USB: usb_service_win.cc:307 SetupDiEnumDeviceInterfaces: 사용 가능한 데이터가 없습니다. (0x103)
+10월 17, 2023 09:07:40.990 [7576:6780:1017/090740.989:ERROR:device_event_log_impl.cc(225)] [09:07:40.989] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import spring.mvc.reboard.BoardDto;
+
 @Repository
 public class InfoDao implements InfoInter {
 	
@@ -57,5 +59,4 @@ public class InfoDao implements InfoInter {
 		// TODO Auto-generated method stub
 		return session.selectList("selectAllOfMyInfo", map);
 	}
-
 }

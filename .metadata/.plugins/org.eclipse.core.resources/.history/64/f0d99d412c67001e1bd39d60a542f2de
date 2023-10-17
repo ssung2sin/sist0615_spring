@@ -1,5 +1,0 @@
-package spring.data.dto;
-
-public class InfoDto {
-
-}

@@ -3,6 +3,8 @@ package spring.mvc.friday;
 import java.util.List;
 import java.util.Map;
 
+import spring.mvc.reboard.BoardDto;
+
 public interface InfoInter {
 
 	public int getTotalCount();
