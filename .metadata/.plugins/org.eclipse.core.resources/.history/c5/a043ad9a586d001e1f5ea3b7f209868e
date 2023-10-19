@@ -1,0 +1,21 @@
+package answer.data;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class AnswerDao implements AnswerDaoInter {
+	
+	@Autowired
+	private SqlSession session;
+	
+	@Override
+	public List<AnswerDto> getAllAnswerList(int num) {
+		// TODO Auto-generated method stub
+		return session.selectList("selectNumOfReanswer",num);
+	}
+
+}

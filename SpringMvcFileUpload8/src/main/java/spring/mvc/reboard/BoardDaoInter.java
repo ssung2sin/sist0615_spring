@@ -18,6 +18,8 @@ public interface BoardDaoInter {
 	
 	public void updateReadcount(int num);
 	
+	public void minusReadcount(int num);
+	
 	public int getCheckPass(String num,String pass);
 	
 	public void updateReboard(BoardDto dto);

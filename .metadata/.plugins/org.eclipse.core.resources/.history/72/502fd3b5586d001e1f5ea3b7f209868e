@@ -1,0 +1,8 @@
+package answer.data;
+
+import java.util.List;
+
+public interface AnswerDaoInter {
+	
+	public List<AnswerDto> getAnswerList(int num);
+}

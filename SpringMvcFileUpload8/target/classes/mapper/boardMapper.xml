@@ -34,6 +34,11 @@
 		update reboard set readcount=readcount+1 where num=#{num}
 	</update>
 	
+	<!-- readcount 감소 -->
+	<update id="readcountminusOfReboard" parameterType="int">
+		update reboard set readcount=readcount-1 where num=#{num}
+	</update>
+	
 	<!-- passcheck -->
 	<select id="checkPassOfReboard" parameterType="HashMap" resultType="int">
 		select count(*) from reboard where num=#{num} and pass=#{pass}
@@ -41,7 +46,7 @@
 	
 	<!-- update -->
 	<update id="updateOfReboard" parameterType="bdto">
-		update reboard set writer=#{writer},subject=#{subject}
+		update reboard set writer=#{writer},subject=#{subject},content=#{content}
 		<if test="photo!='no'">
 		,photo=#{photo}
 		</if>

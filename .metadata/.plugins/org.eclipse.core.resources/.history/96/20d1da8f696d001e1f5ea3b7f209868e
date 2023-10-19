@@ -1,0 +1,57 @@
+package answer.data;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import spring.mvc.reboard.BoardDaoInter;
+
+@Controller
+public class AnswerController {
+	
+	@Autowired
+	AnswerDao dao;
+	
+	@Autowired
+	BoardDaoInter binter;
+	
+	@PostMapping("/board/ainsert")
+	public String insert(@ModelAttribute("dto")AnswerDto dto,
+			@RequestParam int currentPage) {
+		
+		dao.insertAnswer(dto);
+		binter.minusReadcount(dto.getNum());
+		
+		return "redirect:content?num="+dto.getNum()+"&currentPage="+currentPage;
+	}
+	
+	@GetMapping("/board/adel")
+	public String delete(@RequestParam String idx,
+			@RequestParam int currentPage,
+			@RequestParam int num) {
+		
+		dao.deleteAnswer(idx);
+		binter.minusReadcount(num);
+		
+		return "redirect:content?num="+num+"&currentPage="+currentPage+"#answer";
+	}
+	
+	@GetMapping("/board/delcheck")
+	@ResponseBody
+	public String answerDelete(@RequestParam int pass,
+			@RequestParam int check) {
+		
+		if(pass==check) {
+			return "1";
+		}else {
+			return "2";
+		}
+		
+	}
+	
+}

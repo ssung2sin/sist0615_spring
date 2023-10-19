@@ -1,11 +1,15 @@
 package board.data.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import answer.data.AnswerDao;
+import answer.data.AnswerDto;
 import spring.mvc.reboard.BoardDaoInter;
 import spring.mvc.reboard.BoardDto;
 
@@ -15,6 +19,9 @@ public class BoardContentController {
 	@Autowired
 	BoardDaoInter inter;
 	
+	@Autowired
+	AnswerDao adao;
+	
 	@GetMapping("/board/content")
 	public ModelAndView content(@RequestParam int num,
 			@RequestParam int currentPage) {
@@ -23,6 +30,12 @@ public class BoardContentController {
 		
 		inter.updateReadcount(num);
 		BoardDto dto=inter.getData(num);
+		
+		List<AnswerDto> alist=adao.getAnswerList(num);
+		
+		//값이 있을때만 넘기기
+		mview.addObject("alist", alist);
+		mview.addObject("acount", alist.size());
 		
 		mview.addObject("num", num);
 		mview.addObject("currentPage", currentPage);

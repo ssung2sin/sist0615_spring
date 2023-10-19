@@ -112,4 +112,10 @@ public class BoardDao implements BoardDaoInter{
 		session.delete("deleteOfReboard",num);
 	}
 
+	@Override
+	public void minusReadcount(int num) {
+		// TODO Auto-generated method stub
+		session.update("readcountminusOfReboard",num);
+	}
+
 }

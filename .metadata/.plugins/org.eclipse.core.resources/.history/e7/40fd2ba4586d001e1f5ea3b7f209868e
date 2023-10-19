@@ -1,0 +1,6 @@
+package answer.data;
+
+public interface AnswerDaoInter {
+	
+	public AnswerDto getAnswer(int num);
+}

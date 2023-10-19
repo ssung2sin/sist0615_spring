@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gaegu:wght@300&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 </head>
@@ -36,11 +37,47 @@
 				</c:if>
 			</td>
 		</tr>
+		<!-- 댓글 -->
+		<tr>
+			<td>
+				<div id="answer">
+					<b>댓글: ${acount }</b><br><br>
+					<c:forEach var="adto" items="${alist }">
+						${adto.nickname }: ${adto.content }
+						<span style="color:gray; font-size: 0.8em;">
+							<fmt:formatDate value="${adto.writeday }" pattern="yyyy-MM-dd HH:mm"/>
+						</span>
+						<i class="bi bi-eraser adel" style="color: red; cursor: pointer;"
+						idx="${adto.idx }" num="${adto.num }"></i><br>
+					</c:forEach>
+					<br>
+				</div>
+				<form action="ainsert" method="post" style="width: 600px;">
+					<input type="hidden" name="num" value="${dto.num }">
+					<input type="hidden" name="currentPage" value="${currentPage }">
+					
+					<div class="d-inline-flex">
+					<b>닉네임: </b>
+					<input type="text" name="nickname" class="form-control" style="width: 120px;"
+					required="required">
+					<b>비일번호: </b>
+					<input type="password" name="pass" class="form-control" style="width: 120px;"
+					required="required">
+					</div>
+					<br>
+					<div class="d-inline-flex" style="margin-top: 10px;">
+					<input type="text" name="content" class="form-control" style="width: 500px;"
+					placeholder="댓글내용을 입력해주세요">
+					<button type="submit" class="btn btn-outline-info">확인</button>
+					</div>
+				</form>
+			</td>
+		</tr>
 		
 		<tr>
 			<td align="right">
 				<button type="button" class="btn btn-outline-success" onclick="location.href='writeform'">글쓰기</button>
-				<button type="button" class="btn btn-success" onclick="location.href='writeform?num=${dto.num}&regroup=${dto.regroup }&restep=${dto.restep }&relevel=${dto.relevel }&currentPage=${currentPage }'">
+				<button type="button" class="btn btn-outline-primary" onclick="location.href='writeform?num=${dto.num}&regroup=${dto.regroup }&restep=${dto.restep }&relevel=${dto.relevel }&currentPage=${currentPage }'">
 				답글</button>
 				<button type="button" class="btn btn-outline-warning" onclick="location.href='updatepassform?num=${dto.num}&currentPage=${currentPage }'">수정</button>
 				<button type="button" class="btn btn-outline-danger" onclick="location.href='deletepassform?num=${dto.num}&currentPage=${currentPage }'">삭제</button>
@@ -49,5 +86,34 @@
 		</tr>
 	</table>
 </div>
+<script type="text/javascript">
+	$(".adel").click(function(){
+		var num=$(this).attr("num");
+		var idx=$(this).attr("idx");
+		//alert(currentPage);
+		
+		var check=prompt("비밀번호를 입력하시오");
+		if(check!=null){
+			$.ajax({
+				type:"get",
+				url:"delCheck",
+				dataType:"json",
+				data:{"check":check,"idx":idx,"num":num},
+				success:function(data){
+					//alert(data.count);
+					if(data.count==1){
+						alert("삭제되었습니다.")
+						location.reload();
+					}else{
+						alert("일치하지 않습니다.");
+					}
+				}
+			})
+		}else{
+			alert("취소하였습니다.")
+		}
+	})
+
+</script>
 </body>
 </html>
